@@ -139,25 +139,31 @@ function changeDirection() {
     const RIGHT = "ArrowRight";
     const LEFT = "ArrowLeft";
 
+    const keyW = "KeyW";
+    const keyA = "KeyA";
+    const keyS = "KeyS";
+    const keyD = "KeyD";
+    
+
     //prevDir
     var dirUp = (vary === -20);
     var dirDown = (vary === 20);
     var dirRight = (varx === 20);
     var dirLeft = (varx === -20);
 
-    if (keyname == UP && !dirDown) {
+    if ((keyname == UP || keyname == keyW) && !dirDown) {
         varx = 0;
         vary = -20;
     }
-    if (keyname == DOWN && !dirUp) {
+    if ((keyname == DOWN|| keyname == keyS) && !dirUp) {
         varx = 0;
         vary = 20;
     }
-    if (keyname == RIGHT && !dirLeft) {
+    if ((keyname == RIGHT || keyname == keyD) && !dirLeft) {
         varx = 20;
         vary = 0;
     }
-    if (keyname == LEFT && !dirRight) {
+    if ((keyname == LEFT|| keyname == keyA) && !dirRight) {
         varx = -20;
         vary = 0;
     }

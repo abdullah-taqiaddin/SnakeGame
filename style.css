@@ -93,7 +93,14 @@
     margin: 10px;
     background-color: #BEFFBE;
     position: absolute;
+    align-content: center;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.arrowimg{
+    background-image: url(arrows.png);
+    width: 132px;
+    height: 100px;
+    background-size:cover ;
 }
