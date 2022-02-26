@@ -27,16 +27,18 @@
 </head>
 
 <body style="background-image: url(img.png); background-size: cover;">
-    <div class="highScoreicon"></div>
-    
-    <div class="countericon">0</div>
-    <div class="box" style="display: none;"></div>
+    <div class="main">
+        <div class="highScoreicon"></div>
+        <div class="countericon">0</div>
 
-    <canvas class="nes-container with-title is-centered" id="myCanvas" width="400" height="400" style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;" ></canvas>
+        <div class="box" style="display: none;"></div>
+        <canvas class="nes-container with-title is-centered" id="myCanvas" width="400" height="400"
+            style="padding: 0px 0px 0px 0px;"></canvas>
 
-    <h4 class="text">SNAKE</h4>
-    <button class="nes-btn is-success retry" style="display: none;" onclick="retryGame()">Retry</button>
-    <button onclick="start()" type="button" class="nes-btn is-primary start">begin</button>
+        <h4 class="text">SNAKE</h4>
+        <button class="nes-btn is-success retry" style="display: none;" onclick="retryGame()">Retry</button>
+        <button onclick="start()" type="button" class="nes-btn is-primary start">begin</button>
+    </div>
     <script src="script.js"></script>
 
 </body>
