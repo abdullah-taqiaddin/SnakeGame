@@ -12,10 +12,13 @@
 .highScoreicon{
     font-family: 'Press Start 2P', cursive;
     position: absolute;
-    left: 45%;
+    left: 40%;
     top: 10%;
     font-size: 30px;
     margin: 5px;
+    color: red;    
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
     
 }
 .boxicon{
