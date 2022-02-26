@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <!-- minify -->
+    <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+    <!-- latest -->
+    <link href="https://unpkg.com/nes.css@latest/css/nes.min.css" rel="stylesheet" />
+    <!-- core style only -->
+    <link href="https://unpkg.com/nes.css/css/nes-core.min.css" rel="stylesheet" />
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body style="background-image: url(img.png); background-size: cover;">
+    <div class="highScoreicon"></div>
+    
+    <div class="countericon">0</div>
+    <div class="box" style="display: none;"></div>
+
+    <canvas class="nes-container with-title is-centered" id="myCanvas" width="400" height="400" style="padding: 0px 0px 0px 0px; margin: 0px 0px 0px 0px;" ></canvas>
+
+    <h4 class="text">SNAKE</h4>
+    <button class="nes-btn is-success retry" style="display: none;" onclick="retryGame()">Retry</button>
+    <button onclick="start()" type="button" class="nes-btn is-primary start">begin</button>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

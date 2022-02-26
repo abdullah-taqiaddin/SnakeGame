@@ -1,0 +1,84 @@
+
+.highScoreicon{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    left: 46%;
+    top: 10%;
+    font-size: 30px;
+}
+.boxicon{
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border: 0.1px solid darkgreen;
+}
+
+.countericon{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    left: 52%;
+    top: 10%;
+    font-size: 30px;
+}
+
+.start{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    color: darkgreen;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    top: 58%;
+    left: 44%;
+}
+.retry{
+    font-family: 'Press Start 2P', cursive;
+    position: absolute;
+    color: darkgreen;
+    padding: 15px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    top: 58%;
+    left: 44%;
+}
+
+.text{
+    font-family: 'Press Start 2P', cursive;
+    
+	-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 30px;
+    color: red;
+    text-align: center;
+    position: absolute;
+    width: 400px;
+    height: 100px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+}
+
+.box{
+    background-color: rgba(0, 0, 0, 5%);
+    display: block;    
+    text-align: center;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+#myCanvas{
+    background-color: #BEFFBE;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
