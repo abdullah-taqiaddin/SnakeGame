@@ -4,7 +4,8 @@ var canvas = /** @type {HTMLCanvasElement} */ (document.getElementById("myCanvas
 
 //counter
 var counter = 0;
-var highScore = localStorage.getItem("counter", highScore);
+var highScore = 0; 
+localStorage.setItem("counter", highScore);
 const counterBox = document.querySelector(".countericon");
 const highScoreicon = document.querySelector(".highScoreicon");
 //game over / menu
