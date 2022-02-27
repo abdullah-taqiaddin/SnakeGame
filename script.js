@@ -2,10 +2,12 @@
 
 var canvas = /** @type {HTMLCanvasElement} */ (document.getElementById("myCanvas"))
 
-//counter
-var counter = 0;
-var highScore = 0; 
-localStorage.setItem("counter", highScore);
+
+//fetch highscore if theres data in localstorage --> else set to zero
+var currentScore = 0;
+var highScore = (localStorage.getItem("highScore") == null || localStorage.getItem("highScore") == undefined) ? 0 : localStorage.getItem("highScore")
+//
+
 const counterBox = document.querySelector(".countericon");
 const highScoreicon = document.querySelector(".highScoreicon");
 //game over / menu
@@ -21,11 +23,11 @@ function colorBoard() {
     board_ctx.fillStyle = '#ECFFE4';
 
     board_ctx.strokestyle = 'rgb(0, 0, 0)';
-    console.log(board_ctx.strokestyle = 'rgb(0, 0, 255)'    )
+    console.log(board_ctx.strokestyle = 'rgb(0, 0, 255)')
     for (x = 0; x < 400; x += 20) {
         for (y = 0; y < 400; y += 20) {
-            board_ctx.fillRect(x,y, 20, 20);
-            board_ctx.strokeRect(x,y, 20, 20);
+            board_ctx.fillRect(x, y, 20, 20);
+            board_ctx.strokeRect(x, y, 20, 20);
         }
     }
 }
@@ -143,7 +145,7 @@ function changeDirection() {
     const keyA = "KeyA";
     const keyS = "KeyS";
     const keyD = "KeyD";
-    
+
 
     //prevDir
     var dirUp = (vary === -20);
@@ -155,7 +157,7 @@ function changeDirection() {
         varx = 0;
         vary = -20;
     }
-    if ((keyname == DOWN|| keyname == keyS) && !dirUp) {
+    if ((keyname == DOWN || keyname == keyS) && !dirUp) {
         varx = 0;
         vary = 20;
     }
@@ -163,7 +165,7 @@ function changeDirection() {
         varx = 20;
         vary = 0;
     }
-    if ((keyname == LEFT|| keyname == keyA) && !dirRight) {
+    if ((keyname == LEFT || keyname == keyA) && !dirRight) {
         varx = -20;
         vary = 0;
     }
@@ -182,7 +184,7 @@ function moveSnake() {
     var onEaten = (snake[0].x == foodXCoords && snake[0].y == foodYCoords);
     console.log(onEaten);
     if (onEaten === true) {
-        counter++;
+        currentScore++;
         randomFood();
     }
 
@@ -194,12 +196,13 @@ function moveSnake() {
 
 function beginGame() {
 
-    
+
+
     var gameInterval = setInterval(() => {
         if (gameover(snake)) {
             clearInterval(gameInterval);
         }
-        
+
         game();
     }, 100)
     return gameInterval;
@@ -212,18 +215,14 @@ function beginGame() {
 function game() {
     //board_ctx.clearRect(0, 0, 400, 400);
     colorBoard()
-    
+
     if (gameover(snake)) {
-
-        if (counter > localStorage.getItem("counter", counter)) {
-            highScore = counter;
-            localStorage.setItem("counter", counter);
-
+        if (currentScore > localStorage.getItem("highScore")) {
+            localStorage.setItem("highScore", currentScore);
+            highScore = currentScore;
             highScoreicon.textContent = highScore + ":";
-            console.log(highScore);
         }
-
-        counter = 0;
+        currentScore = 0;
         drawFood();
         drawSnake();
         msg.textContent = "GAME OVER!";
@@ -231,8 +230,9 @@ function game() {
         retry.style.display = "";
         return;
     }
+    highScoreicon.textContent = highScore + ":";
 
-    counterBox.textContent = counter.toString();
+    counterBox.textContent = currentScore.toString();
     drawFood();
     changeDirection();
     moveSnake();
@@ -253,11 +253,18 @@ function retryGame() {
     beginGame();
 }
 highScoreicon.textContent = highScore + ":";
+
 function start() {
     msg.textContent = "";
     start_btn.style.display = "none";
     randomFood();
     beginGame();
+}
+
+function clearScore() {
+    localStorage.setItem("highScore", 0);
+    highScore = 0
+    highScoreicon.textContent = highScore + ":";
 }
 
 
