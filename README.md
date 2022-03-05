@@ -1,6 +1,6 @@
 "SNAKE"
 
-Snake game using JS
+-https://abdullah-taqiaddin.github.io/SnakeGame/
 
 -used local Storage to store the "Highest score"
 
