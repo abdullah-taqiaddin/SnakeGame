@@ -136,11 +136,14 @@ function drawFood() {
 
 //change dir
 function changeDirection() {
+    
     const UP = "ArrowUp";
     const DOWN = "ArrowDown";
     const RIGHT = "ArrowRight";
     const LEFT = "ArrowLeft";
 
+
+    //WASD keys
     const keyW = "KeyW";
     const keyA = "KeyA";
     const keyS = "KeyS";
@@ -177,10 +180,8 @@ function moveSnake() {
         x: snake[0].x + varx,
         y: snake[0].y + vary
     };
-
     //put it first
     snake.unshift(temp);
-
     var onEaten = (snake[0].x == foodXCoords && snake[0].y == foodYCoords);
     console.log(onEaten);
     if (onEaten === true) {
@@ -192,11 +193,16 @@ function moveSnake() {
         //remove last
         snake.pop();
     }
+
+    //change dir is called in the game before each moveSnake() method
+
+    //1- create a temp var with the
+    //2- we put it first in the list
+    //3- we check if the snake has consumed food -> continue without removing an element 
+    //4- if not we pop the last to continue the movement with current length
 }
 
 function beginGame() {
-
-
 
     var gameInterval = setInterval(() => {
         if (gameover(snake)) {
@@ -211,7 +217,6 @@ function beginGame() {
 
 
 
-//"main" function
 function game() {
     //board_ctx.clearRect(0, 0, 400, 400);
     colorBoard()
